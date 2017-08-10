@@ -1,0 +1,25 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production electron .",
+    "develop": "cross-env NODE_ENV=development DEBUG=develop node scripts/watch.js",
+    "test": "npm-run-all lint:js",
+    "lint:js": "eslint --config .eslintrc src",
+    "package": "electron-packager . electron-react-mobx-boilerplate --platform=win32,darwin --arch=x64 --out=out --overwrite --no-prune"
+  },
+  "dependencies": {
+    "electron": "^1.6.11"
+  },
+  "devDependencies": {
+    "chokidar": "^1.7.0",
+    "cross-env": "^5.0.0",
+    "electron-connect": "^0.6.1",
+    "electron-devtools-installer": "^2.2.0",
+    "electron-packager": "^8.7.2",
+    "eslint": "^3.19.0",
+    "npm-run-all": "^4.0.2"
+  }
+}
